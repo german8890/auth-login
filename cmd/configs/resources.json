@@ -1,0 +1,15 @@
+{
+  "groupName": "AuthLogin",
+  "resources": [
+    {
+      "path": "/auth-login/login",
+      "method": "POST",
+      "operation": "authlogin"
+    },
+    {
+      "path": "/auth-login/healthcheck",
+      "method": "GET",
+      "operation": "healthcheck"
+    }
+  ]
+}

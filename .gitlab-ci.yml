@@ -1,0 +1,4 @@
+include: 
+  - project: 'unicomer/core-integration/devops/templates-cicd'
+    ref: main
+    file: 'aio/aio-credit-backend-golang-21.yml'

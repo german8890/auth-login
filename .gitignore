@@ -1,0 +1,45 @@
+#Local environment variables to run
+configs/.env
+
+build/
+coverfile_out
+.vscode/
+vendor/
+
+HELP.md
+.gradle
+!gradle/wrapper/gradle-wrapper.jar
+!**/src/main/**
+!**/src/test/**
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+out/
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+### VS Code ###
+.vscode/
+/targetTemporalFile.tmp
+/logs/
+/bin/
+/logback.xml.tmp
+/return_codes.json.tmp
+/return_codes_otpvalidation.json.tmp

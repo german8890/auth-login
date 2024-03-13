@@ -1,0 +1,8 @@
+level_logging: INFO
+context_path: /auth-login
+enable_payload_logging: true
+
+redis:
+  RedisAddr: 6379
+  RedisPassword: 12345
+
