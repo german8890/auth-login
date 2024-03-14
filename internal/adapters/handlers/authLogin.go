@@ -6,18 +6,18 @@ import (
 
 	"autenticacion-ms/cmd/utils"
 
+	repository "autenticacion-ms/internal/core/domain/repository"
+
 	"github.com/gin-gonic/gin"
 )
 
 func (h *AuthHttp) Login() gin.HandlerFunc {
 	return func(c *gin.Context) {
-		username := c.PostForm("username")
-		password := c.PostForm("password")
-		var request interface{}
+		var request repository.User
 		if err := utils.ShouldBindJSON(c, &request); err != nil {
 			return
 		}
-		response, err := h.service.Login(context.Background(), username, password)
+		response, err := h.service.Login(context.Background(), &request)
 		if err != nil {
 			_ = c.Error(err)
 			return

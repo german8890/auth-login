@@ -35,7 +35,7 @@ type Config struct {
 }
 
 type Redis struct {
-	RedisAddr     string `yaml:"redis_addr"`
+	RedisAddr     string `yaml:"redisAddr"`
 	RedisPassword string `yaml:":redis_pass"`
 }
 

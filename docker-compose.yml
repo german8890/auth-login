@@ -5,6 +5,7 @@ services:
     image: "redis:latest"
     ports:
       - "6379:6379"
+    command: redis-server --appendonly yes
 
   app:
     build:
@@ -12,5 +13,11 @@ services:
       dockerfile: Dockerfile
     ports:
       - "8080:8080"
+    environment:
+      ENABLE_PAYLOAD_LOGGING: "true"
+      LEVEL_LOGGING: "INFO"
+      CONTEXT_PATH: "/auth-login"
+      REDIS_ADDR: "redis:6379"
     depends_on:
       - redis
+    command: ["sh", "-c", "echo 'SET evanl15889@gmail.com \"{\\\"email\\\":\\\"evanl15889@gmail.com\\\",\\\"password\\\":\\\"$2a$10$/X11tnOBps3taWdz6gUx4.iM0o8gtiqYhTw1r0lBtmlPGHi7XL9XG\\\"}\"' | redis-cli -h redis"]

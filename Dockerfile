@@ -1,5 +1,5 @@
 # Etapa de construcción
-FROM golang:1.21-alpine AS build
+FROM golang:1.21.3-bookworm as build
 
 WORKDIR /app
 
@@ -7,22 +7,32 @@ WORKDIR /app
 COPY go.mod go.sum ./
 RUN go mod download
 
+# Instala Git si es necesario
+RUN apt-get install --no-install-recommends -y git
+
 # Copia todo el código fuente
 COPY . .
 
 # Compila la aplicación
-RUN CGO_ENABLED=0 GOOS=linux go build -o app .
+RUN go build -mod=vendor -ldflags '-s -w' -o build/bin/auth-login main.go
 
 # Etapa de producción
-FROM gcr.io/distroless/static:nonroot
+FROM gcr.io/distroless/base-debian12:nonroot
 
+ENV GIN_MODE=release
 WORKDIR /app
 
-# Copia el binario de la etapa de construcción
-COPY --from=build /app/app .
+# Copia directorio de configuración
+COPY --from=build /app/cmd/configs /app/cmd/configs
 
-# Expone el puerto
+# Copia el binario
+COPY --from=build /app/build/bin/auth-login /app
+
+# Exponer puertos
 EXPOSE 8080
 
+# Establecer el usuario no root
+USER nonroot:nonroot
+
 # Define el comando de entrada
-ENTRYPOINT ["./app"]
+ENTRYPOINT ["./auth-login"]
