@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: app
-        image: us-central1-docker.pkg.dev/our-voice-417119/vozy/auth-login:v1.0
+        image: us-central1-docker.pkg.dev/our-voice-417119/vozy/auth-login:v2.2
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
@@ -27,9 +27,4 @@ spec:
         - name: CONTEXT_PATH
           value: "/auth-login"
         - name: REDIS_ADDR
-          value: "34.118.239.118:6379"  # Cambiar a la dirección IP del servicio de Redis
-      - name: redis
-        image: us-central1-docker.pkg.dev/our-voice-417119/vozy/redis:1.0
-        imagePullPolicy: Always
-        ports:
-        - containerPort: 6379
+          value: "34.118.239.118:6379"

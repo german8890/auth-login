@@ -4,5 +4,5 @@ enable_payload_logging: true
 
 
 redis:
-  redisAddr: "34.118.239.118:6379"
+  redisAddr: "35.192.37.40:6379"
 
