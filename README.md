@@ -1,19 +1,27 @@
-# process-loan
+Token Validation Service
+This service is designed to create a validation token using libraries such as JWT and is implemented in Golang.
 
-## Environment
-```
-ENABLE_PAYLOAD_LOGGING=true
-LEVEL_LOGGING=INFO
-CONTEXT_PATH=/process-loan
-HTTP_SERVER_PORT=8081
-GRPC_SERVER_PORT=50001
-TRANSACTION_SOCKET_HOST=localhost:8082
-CAMUNDA_HOST="http://localhost:8080/engine-rest"
-CAMUNDA_USER="demo"
-CAMUNDA_PASS="demo"
-CAMUNDA_WORKER_NAME="process-loan"
-CAMUNDA_LOCK_DURATION="120"
-CAMUNDA_MAX_TASK="100"
-CAMUNDA_MAX_PARALLEL_TASK="100"
-CAMUNDA_POLLING_TIMEOUT="0"
-```
+Features
+Generates validation tokens for authentication purposes.
+Utilizes JWT (JSON Web Tokens) for secure token creation.
+Implemented in Golang for efficient performance and scalability.
+Getting Started
+To run the service locally:
+
+Ensure you have Golang installed on your machine.
+Clone the repository from GitHub.
+Navigate to the project directory.
+Run go build to build the executable.
+Execute the binary file to start the service.
+Usage
+Make a POST request to the /generate-token endpoint with the required parameters.
+Receive a validation token in the response.
+Use the token for authentication in your application.
+Dependencies
+JWT Go Library: A Go implementation of JSON Web Tokens.
+Golang: The Go programming language used for development.
+Contributing
+Contributions are welcome! If you'd like to contribute to this project, please fork the repository and submit a pull request.
+
+License
+This project is licensed under the MIT License - see the LICENSE file for details.
