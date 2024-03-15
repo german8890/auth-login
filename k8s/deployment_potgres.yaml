@@ -17,10 +17,3 @@ spec:
           image: postgres:latest
           ports:
             - containerPort: 5432
-          env:
-            - name: POSTGRES_DB
-              value: "starDB"
-            - name: POSTGRES_USER
-              value: "admin"
-            - name: POSTGRES_PASSWORD
-              value: "123456789!!!!!!!"

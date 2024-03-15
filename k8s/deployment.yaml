@@ -15,16 +15,8 @@ spec:
     spec:
       containers:
       - name: app
-        image: us-central1-docker.pkg.dev/our-voice-417119/vozy/auth-login:v2.2
+        image: ""
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
-        env:
-        - name: ENABLE_PAYLOAD_LOGGING
-          value: "true"
-        - name: LEVEL_LOGGING
-          value: "INFO"
-        - name: CONTEXT_PATH
-          value: "/auth-login"
-        - name: REDIS_ADDR
-          value: "34.118.239.118:6379"
+        
