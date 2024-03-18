@@ -20,7 +20,6 @@ func InitDependencies(cfg *config.Config, logger logging.Logger, httpClient *htt
 	if err != nil {
 		logger.Error("Error al crear el cliente Redis")
 		fmt.Println(err)
-		// Aquí puedes agregar cualquier otro manejo de errores necesario
 	} else {
 		logger.Info("Cliente Redis creado exitosamente")
 	}
@@ -28,6 +27,6 @@ func InitDependencies(cfg *config.Config, logger logging.Logger, httpClient *htt
 	authService := services.NewAuthService(*userRepository)
 
 	return &Dependencies{
-		AuthService: authService, // Only include the AuthService dependency
+		AuthService: authService,
 	}
 }

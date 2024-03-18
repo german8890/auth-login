@@ -6,7 +6,6 @@ import (
 	repository "autenticacion-ms/internal/core/domain/repository"
 )
 
-// AppAuthService encapsula la lógica de autenticación.
 type AppAuthService struct {
 	UserRepository repository.RedisUserRepository
 }
@@ -17,7 +16,6 @@ func NewAuthService(userRepository repository.RedisUserRepository) *AppAuthServi
 	}
 }
 
-// Login autentifica a un usuario y genera un token JWT.
 func (s *AppAuthService) Login(ctx context.Context, request *repository.User) (string, error) {
 	username := request.Username
 	password := request.Password

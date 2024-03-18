@@ -11,7 +11,7 @@ spec:
     metadata:
       labels:
         app: auth-login
-        version: v2  # Cambia la etiqueta de versión a una nueva
+        version: v2  
     spec:
       containers:
       - name: app

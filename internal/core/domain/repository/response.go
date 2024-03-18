@@ -5,14 +5,6 @@ type ProcessEvent struct {
 	Data   interface{} `json:"data"`
 }
 
-// type ResponseTopicGCP struct {
-// 	EventName       string `json:"eventName"`
-// 	Producer        string `json:"producer"`
-// 	TimestampEvent  string `json:"timestampEvent"`
-// 	DataSpecVersion string `json:"dataSpecVersion"`
-// 	DataContentType string `json:"datacontenttype"`
-// }
-
 type ResponseTopicGCPHeaders struct {
 	XAcceptLanguage string `json:"X-Accept-Language"`
 	XB3SpanID       string `json:"X-B3-SpanId"`
